@@ -21,6 +21,8 @@ def map_transport_datasets():
         error('TRANSPORT_DATASETS_URL variable must be set.')
         return
 
+    breakpoint()
+
     response = requests.get(source)
     if response.status_code != 200:
         error('Remote platform unreachable.')
