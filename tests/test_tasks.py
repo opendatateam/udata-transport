@@ -9,7 +9,7 @@ MOCK_URL = 'http://reco.net'
 
 
 @pytest.fixture
-def mock_invalid_response():
+def mock_response():
     return [
         {
             "datagouv_id": "61fd29da29ea95c7bc0e1211",
@@ -31,17 +31,17 @@ def mock_invalid_response():
 @pytest.mark.usefixtures('clean_db')
 class Tests:
 
-    @pytest.mark.options(TRANSPORT_DATASETS_URL='https://local.test/api/datasets')
-    def test_map_transport_datasets(self, mock_invalid_response):
+    @pytest.mark.options(TRANSPORT_DATASETS_URL='http://local.test/api/datasets')
+    def test_map_transport_datasets(self, mock_response):
         ds1 = DatasetFactory(id='61fd29da29ea95c7bc0e1211')
         ds2 = DatasetFactory(id='5f23d4b3d39755210a04a99c')
 
         with requests_mock.Mocker() as m:
-            m.get('https://local.test/api/datasets', text='resp')
+            m.get('http://local.test/api/datasets', json=mock_response)
             map_transport_datasets()
 
         ds1.reload()
         ds2.reload()
 
-        assert ds1.extras == {'untouched': 'yep'}
-        assert ds2.extras == {'wait': 'for it'}
+        assert ds1.extras['transport_url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-navettes-hivernales-de-lalpe-dhuez-gtfs-gtfs-rt'
+        assert ds2.extras['transport_url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-lr-11-lalouvesc-tournon-st-felicien-gtfs-gtfs-rt'

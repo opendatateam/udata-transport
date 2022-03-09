@@ -15,13 +15,11 @@ def process_dataset(dataset):
 
 
 @job("map-transport-datasets")
-def map_transport_datasets():
+def map_transport_datasets(self):
     source = current_app.config.get('TRANSPORT_DATASETS_URL', None)
     if not source:
         error('TRANSPORT_DATASETS_URL variable must be set.')
         return
-
-    breakpoint()
 
     response = requests.get(source)
     if response.status_code != 200:
