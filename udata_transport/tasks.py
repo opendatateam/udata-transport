@@ -28,4 +28,4 @@ def map_transport_datasets(self):
     results_list = response.json()
     for dataset in results_list:
         process_dataset(dataset)
-
+    success(f'Done. {len(results_list)} datasets mapped to transport')
