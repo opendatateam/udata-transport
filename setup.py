@@ -27,8 +27,8 @@ tests_require = pip('test.pip')
 
 setup(
     name='udata-transport',
-    version=__import__('udata-transport').__version__,
-    description=__import__('udata-transport').__description__,
+    version=__import__('udata_transport').__version__,
+    description=__import__('udata_transport').__description__,
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/opendatateam/udata-transport',
