@@ -1,6 +1,6 @@
 import pytest
 
-from flask import render_template_string, g
+from flask import render_template_string
 
 from udata.core.dataset.factories import DatasetFactory
 
