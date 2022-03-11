@@ -20,7 +20,6 @@ def datasets():
 @pytest.mark.frontend
 @pytest.mark.usefixtures('clean_db')
 @pytest.mark.usefixtures('app')
-@pytest.mark.options(THEME='gouvfr')
 class TestViews:
 
     def test_view_dataset_no_extras(self):

@@ -5,8 +5,6 @@ from udata.core.dataset.factories import DatasetFactory
 
 from udata_transport.tasks import map_transport_datasets
 
-MOCK_URL = 'http://reco.net'
-
 
 @pytest.fixture
 def mock_response():
