@@ -54,7 +54,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/opendatateam/udata-transport',
     author='Opendata Team',
-    author_email='contact@opendata.team',
+    author_email='opendatateam@data.gouv.fr',
     packages=find_packages(),
     package_data={'udata_transport': ['schema.json']},
     python_requires='>=3.7',
