@@ -41,5 +41,5 @@ class Tests:
         ds1.reload()
         ds2.reload()
 
-        assert ds1.extras['transport_url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-navettes-hivernales-de-lalpe-dhuez-gtfs-gtfs-rt'
-        assert ds2.extras['transport_url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-lr-11-lalouvesc-tournon-st-felicien-gtfs-gtfs-rt'
+        assert ds1.extras['transport:url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-navettes-hivernales-de-lalpe-dhuez-gtfs-gtfs-rt'
+        assert ds2.extras['transport:url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-lr-11-lalouvesc-tournon-st-felicien-gtfs-gtfs-rt'

@@ -28,9 +28,9 @@ class TestViews:
 
     def test_view_dataset_with_transport_url(self):
         dataset = DatasetFactory(extras={
-            'transport_url': 'http://local.test'
+            'transport:url': 'http://local.test'
         })
 
         content = render_hook(dataset=dataset)
 
-        assert dataset.extras['transport_url'] in content
+        assert dataset.extras['transport:url'] in content

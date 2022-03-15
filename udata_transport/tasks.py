@@ -10,15 +10,15 @@ def process_dataset(dataset):
     if not target_dataset:
         error(f"Dataset {dataset['id']} not found")
         return
-    target_dataset.extras['transport_url'] = dataset['page_url']
+    target_dataset.extras['transport:url'] = dataset['page_url']
     target_dataset.save()
 
 
 @job("map-transport-datasets")
 def map_transport_datasets(self):
-    datasets = Dataset.objects(extras__transport_url__exists=True).no_cache().timeout(False)
+    datasets = Dataset.objects(**{'extras__transport:url__exists': True}).no_cache().timeout(False)
     for dataset in datasets:
-        dataset.extras.pop('transport_url', None)
+        dataset.extras.pop('transport:url', None)
         dataset.save()
 
     source = current_app.config.get('TRANSPORT_DATASETS_URL', None)
