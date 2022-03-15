@@ -16,7 +16,7 @@ def process_dataset(dataset):
 
 @job("map-transport-datasets")
 def map_transport_datasets(self):
-    datasets = Dataset.objects().no_cache().timeout(False)
+    datasets = Dataset.objects(extras__transport_url__exists=True).no_cache().timeout(False)
     for dataset in datasets:
         dataset.extras.pop('transport_url', None)
 
