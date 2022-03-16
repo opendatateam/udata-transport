@@ -25,7 +25,7 @@ PLUGINS = ['transport']
 TRANSPORT_DATASETS_URL = 'https://path/to/transport.data.gouv.fr/datasets/api'
 ```
 
-- `TRANSPORT_DATASETS_URL`: The URL of the API endpoint listing datasets on transport.data.gouv.fr. _Default_: `None`
+- `TRANSPORT_DATASETS_URL`: The URL of the API endpoint listing datasets on transport.data.gouv.fr. _Default_: `https://transport.data.gouv.fr/api/datasets`
 
 ## Usage
 
