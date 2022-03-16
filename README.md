@@ -4,7 +4,7 @@ This plugin acts as a bridge between uData and transport.data.gouv.fr system.
 
 ## Compatibility
 
-**udata-transport** requires Python 3.7+ and [uData][].
+**udata-transport** requires Python 3.7+ and [udata][].
 
 ## Installation
 
