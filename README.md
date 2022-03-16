@@ -49,4 +49,4 @@ This plugin will store the mapping URL in the dataset extras `transport:url` key
 }
 ```
 
-[uData]: https://github.com/opendatateam/udata
+[udata]: https://github.com/opendatateam/udata
