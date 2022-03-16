@@ -8,7 +8,7 @@ This plugin acts as a bridge between uData and transport.data.gouv.fr system.
 
 ## Installation
 
-Install [uData][].
+Install [udata][].
 
 Remain in the same virtual environment (for Python).
 
