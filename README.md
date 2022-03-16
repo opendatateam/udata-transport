@@ -1,6 +1,6 @@
 # udata-transport
 
-This plugin acts as a bridge between uData and transport.data.gouv.fr system.
+This plugin acts as a bridge between [udata][] and [transport.data.gouv.fr](https://transport.data.gouv.fr/) system.
 
 ## Compatibility
 
