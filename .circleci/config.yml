@@ -88,7 +88,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
           context: org-global
