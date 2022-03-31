@@ -2,4 +2,4 @@
 
 ## Current (in progress)
 
-- Initial pull request [#1](https://github.com/opendatateam/udata-transport/pull/1)
+- Initial version of udata-transport [#1](https://github.com/opendatateam/udata-transport/pull/1)
