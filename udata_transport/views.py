@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app
+from flask import Blueprint
 
 from udata_front import theme
 from udata.frontend import template_hook

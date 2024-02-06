@@ -43,3 +43,22 @@ class Tests:
 
         assert ds1.extras['transport:url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-navettes-hivernales-de-lalpe-dhuez-gtfs-gtfs-rt'
         assert ds2.extras['transport:url'] == 'https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-lr-11-lalouvesc-tournon-st-felicien-gtfs-gtfs-rt'
+
+    @pytest.mark.options(TRANSPORT_DATASETS_URL='http://local.test/api/datasets')
+    def test_map_transport_datasets_fail(self, mock_response):
+        '''
+        We should not erase existing transport:url extras if the job fails
+        '''
+        ds1 = DatasetFactory(id='61fd29da29ea95c7bc0e1211',
+                             extras={'transport:url': 'dummy'})
+        ds2 = DatasetFactory(id='5f23d4b3d39755210a04a99c')
+
+        with requests_mock.Mocker() as m:
+            m.get('http://local.test/api/datasets', status_code=500)
+            map_transport_datasets()
+
+        ds1.reload()
+        ds2.reload()
+
+        assert ds1.extras['transport:url'] == 'dummy'
+        assert 'transport:url' not in ds2.extras
