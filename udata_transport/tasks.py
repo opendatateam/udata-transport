@@ -15,13 +15,15 @@ def process_dataset(dataset):
 
 
 def clear_datasets():
-    datasets = Dataset.objects(**{'extras__transport:url__exists': True}).no_cache().timeout(False)
+    datasets = Dataset.objects(
+        **{'extras__transport:url__exists': True}
+    ).no_cache().timeout(False)
     for dataset in datasets:
         dataset.extras.pop('transport:url', None)
         dataset.save()
 
 
-@job("map-transport-datasets")
+@job('map-transport-datasets')
 def map_transport_datasets(self):
     source = current_app.config.get('TRANSPORT_DATASETS_URL', None)
     if not source:
