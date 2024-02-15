@@ -1,6 +1,6 @@
 # Changelog
 
-## Current (in progress)
+## 1.0.1 (2024-02-15)
 
 - Replace mongo legacy image in CI [#2](https://github.com/opendatateam/udata-transport/pull/2)
 - Clear datasets only after successful request [#3](https://github.com/opendatateam/udata-transport/pull/3)
