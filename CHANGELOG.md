@@ -1,5 +1,9 @@
 # Changelog
 
+## Current (in progress)
+
+- Nothing yet
+
 ## 1.0.1 (2024-02-15)
 
 - Replace mongo legacy image in CI [#2](https://github.com/opendatateam/udata-transport/pull/2)
