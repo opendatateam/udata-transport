@@ -2,7 +2,7 @@
 
 ## Current (in progress)
 
-- **breaking change** Migrate to Python 3.11 following `udata` dependencies upgrade [#4](https://github.com/opendatateam/udata-transport/pull/4)
+- Migrate to Python 3.11 following `udata` dependencies upgrade [#4](https://github.com/opendatateam/udata-transport/pull/4)
 
 ## 1.0.1 (2024-02-15)
 
