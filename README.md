@@ -1,3 +1,5 @@
+**Note: This project is not maintained anymore. The transport tasks have been integrated in udata directly (https://github.com/opendatateam/udata/pull/3356).**
+
 # udata-transport
 
 This plugin acts as a bridge between [udata][] and [transport.data.gouv.fr](https://transport.data.gouv.fr/) system.
